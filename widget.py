@@ -15,9 +15,15 @@ class Muestra:
         self.correo = StringVar()
         self.movil = StringVar()
 
-        mainFrame = ttk.Frame(raiz, padding="120 120 120 120") #padding(izquierda, arriba, derecha, abajo)
+        mainFrame = ttk.Frame(raiz, padding="30 30 30 30") #padding(izquierda, arriba, derecha, abajo)
         mainFrame.grid(column=0, row=0)
-        mainFrame.pack()
+        
+
+        secondFrame = ttk.Frame(raiz, padding= "30 30 30 30")
+        secondFrame.grid(column=0, row=1)
+        
+        thirdFrame = ttk.Frame(raiz, padding= "30 30 30 30")
+        thirdFrame.grid(column=1, row=0)
 
 
         ttk.Label(mainFrame, text="Nombre").grid(column=0, row=0)
@@ -47,33 +53,33 @@ class Muestra:
         movilEntry.grid(column=1, row=8)
 
         
-        ttk.Label(mainFrame, text="Aficiones:").grid(column=0, row=12)
-        Leer = ttk.Radiobutton(mainFrame, text= "Leer")
-        Leer.grid(column=0, row=14)
+        ttk.Label(secondFrame, text="Aficiones:").grid(column=1, row=7)
+        Leer = ttk.Radiobutton(secondFrame, text= "Leer")
+        Leer.grid(column=1, row=8)
         
-        Musica = ttk.Radiobutton(mainFrame, text="Musica")
-        Musica.grid(column=1, row=14)
+        Musica = ttk.Radiobutton(secondFrame, text="Musica")
+        Musica.grid(column=2, row=8)
         
-        Videojuegos = ttk.Radiobutton(mainFrame, text="Videojuegos") 
-        Videojuegos.grid(column=2, row=14)
+        Videojuegos = ttk.Radiobutton(secondFrame, text="Videojuegos") 
+        Videojuegos.grid(column=3, row=8)
 
-        Estudiante = ttk.Radiobutton(mainFrame, text= "Estudiante")
+        Estudiante = ttk.Radiobutton(thirdFrame, text= "Estudiante")
         Estudiante.grid(column=3, row=4)
         
-        Empleado = ttk.Radiobutton(mainFrame, text="Empleado")
+        Empleado = ttk.Radiobutton(thirdFrame, text="Empleado")
         Empleado.grid(column=3, row=6)
         
-        Desempleado = ttk.Radiobutton(mainFrame, text="Desesempleado") 
+        Desempleado = ttk.Radiobutton(thirdFrame, text="Desesempleado") 
         Desempleado.grid(column=3, row=8)
 
         estado = StringVar()
-        comboEstados = ttk.Combobox(mainFrame, textvariable=estado)
-        comboEstados.grid(column=3, row=14)
+        comboEstados = ttk.Combobox(secondFrame, textvariable=estado)
+        comboEstados.grid(column=4, row=8)
         comboEstados['values'] = ("Jalisco", "Nayarit", "Colima", "Michoacan")
 
-        guardar = ttk.Button(mainFrame, text= "Guardar")
+        guardar = ttk.Button(secondFrame, text= "Guardar")
         guardar.grid(column= 0, row=16)
 
-        cancelar = ttk.Button(mainFrame, text="Cancelar")
+        cancelar = ttk.Button(secondFrame, text="Cancelar")
         cancelar.grid(column= 1, row=16)
 
